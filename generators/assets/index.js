@@ -48,6 +48,21 @@ class ResourcesGenerator extends Base {
       desc: 'The name of the asset',
       default: 'AppIcon',
     });
+    this.option('orientation', {
+      desc: 'Orientation that the splash should be generated. Can be: portrait, landscape or all.',
+      type: String,
+      default: 'all',
+    });
+    this.option('portrait', {
+      desc: 'Build splash for portrait',
+      type: Boolean,
+      default: true,
+    });
+    this.option('landscape', {
+      desc: 'Build splash for landscape',
+      type: Boolean,
+      default: true,
+    });
   }
 
   initializing() {
@@ -81,6 +96,7 @@ class ResourcesGenerator extends Base {
   writing() {
     this._checkOSToBuildFor();
     this._checkAssets();
+    this._checkOrientation();
 
     return Promise.all([
       this._setupIosIcons(),
@@ -109,6 +125,13 @@ class ResourcesGenerator extends Base {
     if (assetPath && !fs.existsSync(assetPath)) {
       this.log.error(`${optionName} could not be found`);
       this.options[optionName] = null;
+    }
+  }
+
+  _checkOrientation() {
+    if (['all, portrait, landscape'].indexOf(this.options.orientation) === -1) {
+      this.log.error('The orientation should be one of the following values: portrait, landscape or all.');
+      this.options.orientation = null;
     }
   }
 
@@ -166,7 +189,7 @@ class ResourcesGenerator extends Base {
         .replace('<string>LaunchScreen</string>', '')
     );
 
-    return imageGenerator.generateIosSplashScreen(this.options.splash, iosSplashFolder);
+    return imageGenerator.generateIosSplashScreen(this.options.splash, iosSplashFolder, this.options.orientation);
   }
 
   _setupAndroidSplashScreen() {
@@ -193,7 +216,8 @@ class ResourcesGenerator extends Base {
       return imageGenerator.generateAndroidSplashScreen(
         this.options.splash,
         this.options.assetsOutputPath,
-        this.options.androidSrcDirectory
+        this.options.androidSrcDirectory,
+        this.options.orientation
       );
     });
   }

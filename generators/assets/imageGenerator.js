@@ -55,17 +55,17 @@ const androidNotificationIconSizes = [
 ];
 
 const iosSplashSizes = [
-  { name: "Default-Portrait-812h@3x", width: 1125, height: 2436 },
-  { name: "Default-Landscape-812h@3x", width: 2436, height: 1125 },
-  { name: 'Default-568h@2x',           width: 640,   height: 1136 },
-  { name: 'Default-667h@2x',           width: 750,   height: 1334 },
-  { name: 'Default-Portrait-736h@3x',  width: 1242,  height: 2208 },
-  { name: 'Default-Landscape-736h@3x', width: 2208,  height: 1242 },
-  { name: 'Default-Landscape@2x',      width: 2048,  height: 1536 },
-  { name: 'Default-Landscape',         width: 1024,  height: 768 },
-  { name: 'Default-Portrait@2x',       width: 1536,  height: 2048 },
-  { name: 'Default-Portrait',          width: 768,   height: 1024 },
-  { name: 'Default@2x',                width: 640,   height: 960 },
+  { name: "Default-Portrait-812h@3x", width: 1125, height: 2436, orientation: 'portrait' },
+  { name: "Default-Landscape-812h@3x", width: 2436, height: 1125, orientation: 'landscape'  },
+  { name: 'Default-568h@2x',           width: 640,   height: 1136, orientation: 'portrait' },
+  { name: 'Default-667h@2x',           width: 750,   height: 1334, orientation: 'portrait' },
+  { name: 'Default-Portrait-736h@3x',  width: 1242,  height: 2208, orientation: 'portrait' },
+  { name: 'Default-Landscape-736h@3x', width: 2208,  height: 1242, orientation: 'landscape' },
+  { name: 'Default-Landscape@2x',      width: 2048,  height: 1536, orientation: 'landscape'  },
+  { name: 'Default-Landscape',         width: 1024,  height: 768, orientation: 'landscape'  },
+  { name: 'Default-Portrait@2x',       width: 1536,  height: 2048, orientation: 'portrait' },
+  { name: 'Default-Portrait',          width: 768,   height: 1024, orientation: 'portrait' },
+  { name: 'Default@2x',                width: 640,   height: 960, orientation: 'portrait' },
 ];
 
 const itunesIconSize =
@@ -140,8 +140,10 @@ const generateAndroidIcons = (iconSource, assetsOutputPath, androidSrcDirectory)
     )
   ));
 
-const generateIosSplashScreen = (splashSource, iosSplashFolder) =>
-  Promise.all(iosSplashSizes.map(size =>
+const generateIosSplashScreen = (splashSource, iosSplashFolder, orientation) =>
+  Promise.all(iosSplashSizes.filter(size => 
+      orientation === 'all' || size.orientation === orientation
+    ).map(size =>
     generateResizedAssets(
       splashSource,
       `${iosSplashFolder}/${size.name}.png`,
@@ -150,8 +152,10 @@ const generateIosSplashScreen = (splashSource, iosSplashFolder) =>
     )
   ));
 
-const generateAndroidSplashScreen = (splashSource, assetsOutputPath, androidSrcDirectory) =>
-  androidSplashSizes.map(size =>
+const generateAndroidSplashScreen = (splashSource, assetsOutputPath, androidSrcDirectory, orientation) =>
+  androidSplashSizes.filter(size =>
+    orientation === 'all' || size.orientation === orientation
+  ).map(size =>
     generateResizedAssets(
       splashSource,
       `${assetsOutputPath}/android/app/src/${androidSrcDirectory}/res/drawable-${size.density}/launch_screen.png`,
