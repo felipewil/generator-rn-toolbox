@@ -129,9 +129,9 @@ class ResourcesGenerator extends Base {
   }
 
   _checkOrientation() {
-    if (['all, portrait, landscape'].indexOf(this.options.orientation) === -1) {
+    if (['all', 'portrait', 'landscape'].indexOf(this.options.orientation) === -1) {
       this.log.error('The orientation should be one of the following values: portrait, landscape or all.');
-      this.options.orientation = null;
+      this.options.orientation = 'all';
     }
   }
 
