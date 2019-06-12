@@ -8,7 +8,6 @@ module.exports = (imagePath, x, y) =>
       	gm(buffer)
       	.identify('%[hex:s]', (error, imageMagickColor) => {
 	        if (error) return reject(error);
-	        console.log(imageMagickColor);
 	        return resolve(`#${imageMagickColor}`);
 	      })
       })
