@@ -22,7 +22,7 @@ class BaseGenerator extends Base {
 
   main() {
     this.composeWith(
-      `rn-toolbox:${this.generator}`,
+      `rn-toolbox-gv:${this.generator}`,
       {},
       {
         local: require.resolve(path.join('..', this.generator)),

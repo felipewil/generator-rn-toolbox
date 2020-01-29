@@ -2,7 +2,7 @@
 
 *Tired of the same empty initial app? Start with a real React Native Project*
 
-Use `yo rn-toolbox:base` to replace the base project
+Use `yo rn-toolbox-gv:base` to replace the base project
 
 **Features**
 - Centralized App.js

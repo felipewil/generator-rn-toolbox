@@ -2,4 +2,4 @@
 
 *Sets up VSCode for ultimate productivity with React Native*
 
-Use `yo rn-toolbox:vscode` to set it up
+Use `yo rn-toolbox-gv:vscode` to set it up

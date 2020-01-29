@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Yeoman generator",
       "program": "/usr/local/bin/yo",
-      "args": ["rn-toolbox:fastlane-env"],
+      "args": ["rn-toolbox-gv:fastlane-env"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "cwd": "${workspaceFolder}/../yourProject"

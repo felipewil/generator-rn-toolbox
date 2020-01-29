@@ -20,15 +20,15 @@ const getIosHardDeployCommandForEnvironment = environment =>
 class CircleGenerator extends Base {
   initializing() {
     analytics.pageview('/circleci').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
     if (!this.config.get('fastlane'))
       this.log.error(
-        'You need to run `yo rn-toolbox:fastlane` first.'.red.bold
+        'You need to run `yo rn-toolbox-gv:fastlane` first.'.red.bold
       );
 
     if (!this.config.get('circleci-ready'))
       this.log.error(
-        'You need to have the deployment script and secrets archive from fastlane-setup to use this generator. Get them by running yo rn-toolbox:fastlane-setup.'
+        'You need to have the deployment script and secrets archive from fastlane-setup to use this generator. Get them by running yo rn-toolbox-gv:fastlane-setup.'
           .red.bold
       );
   }
@@ -52,7 +52,7 @@ class CircleGenerator extends Base {
     });
     if (environments.length === 0)
       this.log.error(
-        'You need at least one environment setup with fastlane-env to run this generator. Run yo rn-toolbox:fastlane-env.'
+        'You need at least one environment setup with fastlane-env to run this generator. Run yo rn-toolbox-gv:fastlane-env.'
           .red.bold
       );
 
@@ -156,7 +156,7 @@ class CircleGenerator extends Base {
 
   end() {
     this.log(
-      `Custom config.yml created. Re-run yo rn-toolbox:circleci anytime to re-generate the file with latest environments information.`
+      `Custom config.yml created. Re-run yo rn-toolbox-gv:circleci anytime to re-generate the file with latest environments information.`
         .green.bold
     );
     this.log(

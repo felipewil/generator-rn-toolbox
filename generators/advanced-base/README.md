@@ -2,9 +2,9 @@
 
 *Tired of the same empty initial app? Start with a real React Native Project*
 
-Use `yo rn-toolbox:advanced-base` to replace the base project
+Use `yo rn-toolbox-gv:advanced-base` to replace the base project
 
-This generator is an alternative to `yo rn-toolbox:base`. It add a basic navigation and some common component to start faster.
+This generator is an alternative to `yo rn-toolbox-gv:base`. It add a basic navigation and some common component to start faster.
 
 **Features**
 - Centralized App.js

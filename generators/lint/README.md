@@ -4,4 +4,4 @@
 
 *Prettier autoformats your code as you save. No more wasting time indenting, adding a missing comma or splitting lines*
 
-Use `yo rn-toolbox:lint` to setup eslint-config-universe with prettier enabled.
+Use `yo rn-toolbox-gv:lint` to setup eslint-config-universe with prettier enabled.

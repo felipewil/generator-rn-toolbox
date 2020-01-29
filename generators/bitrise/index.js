@@ -4,9 +4,9 @@ const analytics = require('../../analytics');
 class BitriseGenerator extends Base {
   initializing() {
     analytics.pageview('/bitrise').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
     if (!this.config.get('fastlane')) {
-      this.log.error('You need to run `yo rn-toolbox:fastlane` first.');
+      this.log.error('You need to run `yo rn-toolbox-gv:fastlane` first.');
     }
   }
 

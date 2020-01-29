@@ -5,7 +5,7 @@ const analytics = require('../../analytics');
 class FastlaneGenerator extends Base {
   initializing() {
     analytics.pageview('/fastlane-setup').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
   }
 
   prompting() {

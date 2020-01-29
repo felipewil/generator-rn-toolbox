@@ -6,6 +6,6 @@ In order to make Travis working on your app, you need to create a .travis.yml fi
 
 We recommend using Travis for the tests as it comes with yarn preinstalled and allows you to save your Jest cache
 
-`yo rn-toolbox:travisci`
+`yo rn-toolbox-gv:travisci`
 
 Then you have to configure the branch on which you want to trigger travisCI webhook on :)

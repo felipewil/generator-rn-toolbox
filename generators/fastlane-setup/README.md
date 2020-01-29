@@ -16,7 +16,7 @@
 
 This is just the fastlane setup step required to centralize your app config. Run it with
 ```
-yo rn-toolbox:fastlane-setup
+yo rn-toolbox-gv:fastlane-setup
 ```
 
 Once done head over to [fastlane-env](../fastlane-env/README.md) to setup multiple environments for your project.

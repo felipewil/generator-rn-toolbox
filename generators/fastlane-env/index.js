@@ -38,10 +38,10 @@ const installGpgCommands = [{ commandName: 'brew', args: ['install', 'gpg'] }];
 class FastlaneEnvGenerator extends Base {
   initializing() {
     analytics.pageview('/fastlane-env').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
     if (!this.config.get('fastlane')) {
       this.log.error(
-        'Running fastlane setup is required to use the environments. You can run it with yo rn-toolbox:fastlane-setup'
+        'Running fastlane setup is required to use the environments. You can run it with yo rn-toolbox-gv:fastlane-setup'
           .red.bold
       );
     }

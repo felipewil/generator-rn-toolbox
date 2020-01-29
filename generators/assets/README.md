@@ -3,7 +3,7 @@
 ## Requirements
 
 - You need node >= 6 installed (using [NVM](https://github.com/creationix/nvm) is recommended)
-- Install the generator `npm install -g yo generator-rn-toolbox`
+- Install the generator `npm install -g yo generator-rn-toolbox-gv`
 - You need `imagemagick` installed to use this generator.
 
 On a mac, you can install it with `brew`:
@@ -19,7 +19,7 @@ Starting with XCode 9, your Apple App Store icon is bundled with the app, so pro
 
 Then run:
 ```
-yo rn-toolbox:assets --icon icon.png
+yo rn-toolbox-gv:assets --icon icon.png
 ```
 Answer yes when asked about overwriting.
 
@@ -43,7 +43,7 @@ Be aware that content located on the edges of the picture might get cut (see [ex
 
 Run:
 ```
-yo rn-toolbox:assets --splash splash.psd --ios
+yo rn-toolbox-gv:assets --splash splash.psd --ios
 ```
 
 You're all set! :dancer:
@@ -67,7 +67,7 @@ The generator only supports a splash with a plain background color on Android.
 
 Run:
 ```
-yo rn-toolbox:assets --splash splash.psd --android
+yo rn-toolbox-gv:assets --splash splash.psd --android
 ```
 
 In order to set the background color go in YOURPROJECT/android/app/src/main/res/values/colors.xml and put an hexacode instead of the `rgb(0,0,0)`.
@@ -84,7 +84,7 @@ You'll need to specify:
   - a splash screen image for the play store image with a size of more than **1024x500 px** (psd is supported).
 
 ```
-yo rn-toolbox:assets --icon icon.png --splash splash.psd --store
+yo rn-toolbox-gv:assets --icon icon.png --splash splash.psd --store
 ```
 
 This will create 3 files at the root of your project:
@@ -98,14 +98,14 @@ When setting up push notifications on Android (with [React Native Push notificat
 
 You'll need an image for your icon with a size of more than **96x96 px** (psd is supported).
 ```
-yo rn-toolbox:assets --android-notification-icon icon.png
+yo rn-toolbox-gv:assets --android-notification-icon icon.png
 ```
 
 ## Run the command only for a platform
 You can select the platform you want to generate assets for. For instance:
 ```
-yo rn-toolbox:assets --icon icon.png --android
-yo rn-toolbox:assets --splash splash.psd --ios
+yo rn-toolbox-gv:assets --icon icon.png --android
+yo rn-toolbox-gv:assets --splash splash.psd --ios
 ```
 
 ## Hide Splashscreen from JS code

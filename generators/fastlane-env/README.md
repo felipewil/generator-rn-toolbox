@@ -4,7 +4,7 @@
 
 ### 1. Create a new Environment
 ```
-yo rn-toolbox:fastlane-env
+yo rn-toolbox-gv:fastlane-env
 ```
 
 ### 2. Generate the provisioning profiles

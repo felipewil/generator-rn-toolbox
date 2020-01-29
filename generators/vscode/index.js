@@ -5,7 +5,7 @@ const analytics = require('../../analytics');
 class VSCodeGenerator extends Base {
   initializing() {
     analytics.pageview('/vscode').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
   }
 
   prompting() {

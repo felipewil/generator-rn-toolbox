@@ -7,7 +7,7 @@ function fetchVersion() {
     http.get(
       {
         host: 'registry.npmjs.org',
-        path: '/generator-rn-toolbox',
+        path: '/generator-rn-toolbox-gv',
       },
       response => {
         // Continuously update stream with data

@@ -4,7 +4,7 @@ const analytics = require('../../analytics');
 class LintGenerator extends Base {
   initializing() {
     analytics.pageview('/lint').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
   }
 
   install() {

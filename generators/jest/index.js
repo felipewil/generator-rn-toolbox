@@ -4,7 +4,7 @@ const analytics = require('../../analytics');
 class JestGenerator extends Base {
   initializing() {
     analytics.pageview('/jest').send();
-    this.composeWith('rn-toolbox:checkversion');
+    this.composeWith('rn-toolbox-gv:checkversion');
   }
 
   writing() {
